@@ -1,0 +1,27 @@
+.eventListItem {
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+    width: 750px;
+    box-shadow: 10px 10px 5px gray;
+}
+
+.eventListItem:hover {
+    background-color: yellow;
+    color: blue;
+    
+}
+
+.eventListItem h1 {
+    pointer-events: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.eventListItem p {
+    pointer-events: none;
+    font-style: italic;
+    font-size: 20px;
+}

@@ -1,3 +1,7 @@
+//get event data from local storage
+var eventData = JSON.parse(localStorage.getItem('SLCeventData'));
+console.log(eventData);  //Remove this line after Ricardo is complete with the page rendering <-----------------------------------------------------
+
 function populateEvent(event) {
     const eventImage = document.getElementById('event-image'); //I created a variable to store information
     const eventDescription = document.getElementById('event-description'); //I created a variable to store information
