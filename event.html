@@ -49,9 +49,12 @@
     <div class="venue-container" id="venue-container">
         <P>Venue</P>
     </div>
-
-    <div class="des-container" id="des-container">
+    <div class="image-container" id="image-container">
+        <img id="event-image"></img>
+    </div>
+    <div class="des-container">
         <p>Event Description</p>
+        <button id="buyButton">Buy Tickets bro!</button>
     </div>
 
     <div class="weather-container" id="weather-container">
@@ -60,6 +63,11 @@
 
     <div class="seat-map-container" id="seat-map-container">
         <p>Seat Map</p>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+    <script src="./assets/js/event.js"></script>
     <footer>
 
         <div class="traffic-container" id="traffic-container">
@@ -68,11 +76,6 @@
 
         <h5>An MMDR Website</h5>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script>dayjs().format()</script>
-    <script src="./assets/js/event.js"></script>
-
 </body>
 
 </html>

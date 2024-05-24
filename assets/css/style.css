@@ -18,14 +18,14 @@
     width: 30%;
 }
 .js-modal-trigger {
-  width: 100%;
+    width: 100%;
     color: white;
-  text-align: center;
-  background-image:linear-gradient( #FCB105, #550499);
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 5px 5px 10px black;
-  padding: 8px;
+    text-align: center;
+    background-image: linear-gradient(#FCB105, #550499);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 5px 5px 10px black;
+    padding: 8px;
 
 }
 
