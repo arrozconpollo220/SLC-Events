@@ -21,8 +21,7 @@ function getEventData(startDate, endDate, eventType) {
   } else {
     APIClass = "";
   }
-console.log(APIClass);
-console.log(`https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20lake%20city&apikey=EFLPko3jjswvkWgJxXg6p9OyquHfVL5A&startDateTime=${start}T06:00:00Z&endDateTime=${end}T05:59:59Z&sort=date,asc${APIClass}`);
+  console.log(`https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20lake%20city&apikey=EFLPko3jjswvkWgJxXg6p9OyquHfVL5A&startDateTime=${start}T06:00:00Z&endDateTime=${end}T05:59:59Z&sort=date,asc${APIClass}`)
   //fetches data from Ticketmaster and stores in "eventList" variable
   fetch(
     `https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20lake%20city&apikey=EFLPko3jjswvkWgJxXg6p9OyquHfVL5A&startDateTime=${start}T06:00:00Z&endDateTime=${end}T05:59:59Z&sort=date,asc${APIClass}`
@@ -39,7 +38,7 @@ console.log(`https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20
 //This function renders the event list to the home page
 function renderEventList() {
   const eventsArray = eventsList._embedded.events;
-
+    eventListEl.textContent = "";
   for (i = 0; i < eventsArray.length; i++) {
     //set variables for the data
     const eventID = eventsArray[i].id;
@@ -81,12 +80,14 @@ window.onload = (event) => {
   getEventData(dayjs(), dayjs(), "");
 };
 
-// Keith: Modal section
+// Keith: Modal section------------------------------------------------------------------------------------
+const modalBox=document.getElementById("modal-js-example");
 
 document.addEventListener("DOMContentLoaded", () => {
   // Functions to open and close a modal
   function openModal($el) {
     $el.classList.add("is-active");
+    modalBox.style.display="block"; 
   }
 
   function closeModal($el) {
@@ -131,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("search-btn").addEventListener("click", function(e){
-    const modalBox=document.getElementById("modal-js-example");
+    
     const startDate=document.getElementById("start-date").value;
     const endDate=document.getElementById("end-date").value;
     const eventType=document.getElementById("eventTypeSelector").value;
