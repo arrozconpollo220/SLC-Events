@@ -60,7 +60,7 @@ function compareDates(data) {
     renderWeather(forecastArray, index)
 }
 function renderWeather(forecastArray, index) {
-    var weatherEl = document.getElementById('weather');  //need this created in HTML  <----------------------------------------
+    var weatherEl = document.getElementById('weather-container');  //need this created in HTML  <----------------------------------------
     //if the event selected is more than 5 days in the future, the forecast for the event
     //is not available.  Therefore, the current weather conditions are shown instead.
     console.log(index);
