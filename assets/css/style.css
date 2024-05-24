@@ -1,5 +1,67 @@
+/* beginning of  modal  */
+
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+@use "bulma/sass/utilities/controls";
+
+.header {
+    width: 100%;
+    font-size: 20px;
+    text-shadow: 5px 5px 10px black;
+    color: aliceblue;
+    text-align: center;
+    background-image:linear-gradient(#FCB105, #550499);
+
+}
+
+.button {
+    border-radius: 20% !important;
+    width: 30%;
+}
+.js-modal-trigger {
+  width: 100%;
+    color: white;
+  text-align: center;
+  background-image:linear-gradient( #FCB105, #550499);
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 5px 5px 10px black;
+  padding: 8px;
+
+}
+
+.modal-wrap {
+    background: #2e333d;
+    position: center;
+    width: 603px;
+    top: 53%;
+}
+
+
+.hero-body {
+    padding: 0% !important;
+}
+
+.title {
+
+    text-align: center;
+    color: white;
+    top: 10%;
+    font-size: 50px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.sub-title {
+    text-align: center;
+    top: 10%;
+}
+
+/* end of modal  */
+
 .eventListItem {
-    background-color: blue;
+    background-image:linear-gradient( #FCB105, #550499);
     color: white;
     border-radius: 10px;
     margin: 15px;
@@ -9,9 +71,9 @@
 }
 
 .eventListItem:hover {
-    background-color: yellow;
-    color: blue;
     
+    color: #96FE00;
+    box-shadow: 10px 10px 5px #96FE00;
 }
 
 .eventListItem h1 {
