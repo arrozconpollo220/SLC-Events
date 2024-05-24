@@ -6,25 +6,23 @@ const eventListEl = document.getElementById("event-list");
 function getEventData(startDate, endDate, eventType) {
   const start = dayjs(startDate).format("YYYY-MM-DD");
   const end = dayjs(endDate).add(1, "day").format("YYYY-MM-DD"); //needs to be end date plus one day for Zulu time conversion
-
+  console.log(startDate,endDate,eventType);
   //convert received list type to API classification
+  var eventClass = eventType;
   var APIClass;
-  if ((eventType = "")) {
-    //Waiting for modal to be completed to finish line <---------------------------------
+  if (eventClass === "Sports") {
     APIClass = "&classificationName=sports";
-  } else if ((eventType = "")) {
-    //Waiting for modal to be completed to finish line <---------------------------------
+  } else if (eventClass === "Music") {
     APIClass = "&classificationName=music";
-  } else if ((eventType = "")) {
-    //Waiting for modal to be completed to finish line <---------------------------------
+  } else if (eventClass === "Arts & Theatre") {
     APIClass = "&classificationName=arts%20%26%20theatre";
-  } else if ((eventType = "")) {
-    //Waiting for modal to be completed to finish line <---------------------------------
+  } else if (eventClass === "Shows") {
     APIClass = "&classificationName=Miscellaneous";
   } else {
     APIClass = "";
   }
-
+console.log(APIClass);
+console.log(`https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20lake%20city&apikey=EFLPko3jjswvkWgJxXg6p9OyquHfVL5A&startDateTime=${start}T06:00:00Z&endDateTime=${end}T05:59:59Z&sort=date,asc${APIClass}`);
   //fetches data from Ticketmaster and stores in "eventList" variable
   fetch(
     `https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20lake%20city&apikey=EFLPko3jjswvkWgJxXg6p9OyquHfVL5A&startDateTime=${start}T06:00:00Z&endDateTime=${end}T05:59:59Z&sort=date,asc${APIClass}`
@@ -133,11 +131,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("search-btn").addEventListener("click", function(e){
-  const startDate=document.getElementById("start-date").value
-  const endDate=document.getElementById("end-date").value
-  const eventType=document.querySelector("select").value
-  getEventData(startDate, endDate, eventType);
-  const modalBox=document.getElementById("modal-js-example");
-  modalBox.style.display="none";
+    const modalBox=document.getElementById("modal-js-example");
+    const startDate=document.getElementById("start-date").value;
+    const endDate=document.getElementById("end-date").value;
+    const eventType=document.getElementById("eventTypeSelector").value;
+    getEventData(startDate, endDate, eventType);
+    modalBox.style.display="none";       
 });
 // end of modal section
