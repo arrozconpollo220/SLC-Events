@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style2.css">
     <title>SLC Event populate </title>
     <style>
         .event-container {
@@ -47,25 +48,25 @@
 
 
     <div class="venue-container" id="venue-container">
-        <P>Venue</P>
+        <h1>Venue</h1>
     </div>
     <div class="image-container" id="image-container">
         <img id="event-image"></img>
     </div>
     <div class="des-container">
-        <p>Event Description</p>
-        <button id="buyButton">Buy Tickets bro!</button>
+        <h1>Event Description</h1>
+        <form><button type="submit" class="button is-warning" id="buyButton">Buy Tickets bro!</button></form>
     </div>
 
     <div class="weather-container" id="weather-container">
-        <p>Weather for the day of the event</p>     
+        <h1>Weather for the day of the event</h1>     
     </div>
 
     <div class="seat-map-container" id="seat-map-container">
-        <p>Seat Map</p>
-
+        <h1>Seat Map</h1>
+    </div>
     <div class="traffic-container" id="traffic-container">
-        <p>Traffic for the Event</p>
+        <h1>Traffic for the Event</h1>
         <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:500px;">
             <div id="google-maps-display" style="height:100%; width:100%;max-width:100%;">
                 <iframe id="mapInfo" style="height:100%;width:100%;border:0;" frameborder="0">
