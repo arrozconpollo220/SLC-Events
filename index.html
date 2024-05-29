@@ -10,34 +10,41 @@
 </head>
 
 <body>
-    <video id="bgVideo" controls preload="true" autoplay loop muted>
-        <source src="assets/selfie.mp4" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
-        <source src="../images/Home_Page.webm" type="video/webm">
-        Your browser does not support the video tag.
-    </video>
-    
+
     <header class="header">
         <h1 class="title">SLC EVENTS</h1>
         <h3 class="sub-title">A Better Place To Find Your SLC Event</h3>
-        </div>
+        <img src="assets/images/SLCnight crop.jpg" alt="">
     </header>
 
-    <section class="hero is-small">
-        <div class="hero-body">
 
 
+    <section class="main is-align-content-flex-start">
+        <div class="main">
+            <video id="bgVideo" autoplay loop muted>
+                <source src="assets/selfie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                <source src="../images/Home_Page.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
         </div>
-    </section>
-    <button class="js-modal-trigger" data-target="modal-js-example">
-        Click Here to Search for Events
-    </button>
-
-
-    <section class="event-list is-pulled-right" id="event-list">
-
 
     </section>
+    <container id="pageOneContent">
+        <div class="welcome pageOneCol">
+            <h3>Welcome to our webpage</h3>
+            <button class="js-modal-trigger" data-target="modal-js-example">
+                Search for Events
+            </button>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur quaerat, odio voluptatem
+                voluptatibus fugiat ratione animi voluptates nam dolores eum culpa officiis porro debitis similique
+                voluptate. Expedita, harum deserunt!</p>
+        </div>
+
+        <section class="event-list is-pulled-right pageOneCol" id="event-list">
+        </section>
+    </container>
 
     <footer>
 
