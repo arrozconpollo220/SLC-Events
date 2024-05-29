@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style2.css">
-    <title>SLC Events</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>SLC Event populate </title>
     <style>
         .event-container {
             border: 1px solid #ccc;
@@ -64,18 +64,27 @@
     <div class="seat-map-container" id="seat-map-container">
         <p>Seat Map</p>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script>dayjs().format()</script>
-    <script src="./assets/js/event.js"></script>
-    <footer>
-
-        <div class="traffic-container" id="traffic-container">
-            <p>Traffic for the Event</p>
+    <div class="traffic-container" id="traffic-container">
+        <p>Traffic for the Event</p>
+        <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:500px;">
+            <div id="google-maps-display" style="height:100%; width:100%;max-width:100%;">
+                <iframe id="mapInfo" style="height:100%;width:100%;border:0;" frameborder="0">
+                </iframe>
+            </div>
+            <a class="google-maps-html" href="https://kbj9qpmy.com/bp" id="grab-map-info">Internet Provider</a>
+            <style>#google-maps-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
         </div>
+    </div>
+
+    <footer>
 
         <h5>An MMDR Website</h5>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+    <script src="./assets/js/event.js"></script>
+
 </body>
 
 </html>
