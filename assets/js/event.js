@@ -3,15 +3,18 @@ var eventData = JSON.parse(localStorage.getItem('SLCeventData'));
 console.log(eventData);  //Remove this line after Ricardo is complete with the page rendering <-----------------------------------------------------
 
 
+    const eventTitle = document.getElementById('event-title');
     const eventImage = document.getElementById('event-image'); //I created a variable to store information
     const eventDescription = document.getElementById('des-container'); //I created a variable to store information
     const seatMap = document.getElementById('seat-map-container'); //I created a variable to store information
     const buyButton = document.getElementById('buyButton');
     const venue = document.getElementById('venue-container');
     
-    eventImage.setAttribute('src',eventData.images[0].url);
-    console.log(eventData.images[0].url);
+    const eventTitleInfo = document.createElement("p");
+    eventTitleInfo.textContent = eventData.name;
+    eventTitle.append(eventTitleInfo);
 
+    eventImage.setAttribute('src',eventData.images[0].url);
 
     const venueAddress = document.createElement('p');
     const venueAddress2 = document.createElement('p');
@@ -19,20 +22,33 @@ console.log(eventData);  //Remove this line after Ricardo is complete with the p
     venueAddress2.textContent = `${eventData._embedded.venues[0].city.name}, UT ${eventData._embedded.venues[0].postalCode}`;
     venue.append(venueAddress);
     venue.append(venueAddress2);
-    
-    
-    
 
     buyButton.setAttribute('onclick',`window.location="${eventData.url}"`);
     console.log(eventData.url);
     
-    
     const seatMapImage = document.createElement('img');
-    console.log(eventData.seatmap.staticUrl);
-    
-        seatMapImage.setAttribute('src', eventData.seatmap.staticUrl);
-    
+    seatMapImage.setAttribute('src', eventData.seatmap.staticUrl);
     seatMap.append(seatMapImage);
+//This code is for adding various pieces of information found scattered throughout the API------------------------------------------------
+    const addlInfo = document.getElementById("info-container");
+
+    function populateAddlInfo (data) {
+        const lineBreak = document.createElement('p');
+        const newInfo = document.createElement('p');
+        lineBreak.textContent = " ";
+        newInfo.textContent = data;
+        addlInfo.append(lineBreak);
+        addlInfo.append(newInfo);
+    }
+    if (typeof (eventData.ticketLimit) !== "undefined") {
+        populateAddlInfo(eventData.ticketLimit.info);
+    }
+
+    if (typeof (eventData.info) !== "undefined") {
+        populateAddlInfo(eventData.info);
+    }
+//End code for adding additional information-----------------------------------------------------------------------------------------------
+
 
 
 //Get weather data for the event-----------------------------------------------------------------------------------------------------------

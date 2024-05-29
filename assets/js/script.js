@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeModal($el) {
     $el.classList.remove("is-active");
+    modalBox.style.display="none"; 
   }
 
   function closeAllModals() {
