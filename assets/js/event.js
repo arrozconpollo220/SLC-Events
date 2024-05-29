@@ -7,37 +7,28 @@ console.log(eventData);  //Remove this line after Ricardo is complete with the p
     const eventDescription = document.getElementById('des-container'); //I created a variable to store information
     const seatMap = document.getElementById('seat-map-container'); //I created a variable to store information
     const buyButton = document.getElementById('buyButton');
+    const venue = document.getElementById('venue-container');
     
-
     eventImage.setAttribute('src',eventData.images[0].url);
     console.log(eventData.images[0].url);
 
 
-    //set the description information below the img 
+    const venueAddress = document.createElement('p');
+    venueAddress.textContent = eventData._embedded.venues[0].address.line1;
+    venue.append(venueAddress);
     
 
     buyButton.setAttribute('onclick',`window.location="${eventData.url}"`);
     console.log(eventData.url);
     
-    // shows the description of the event
     
+    const seatMapImage = document.createElement('img');
+    console.log(eventData.seatmap.staticUrl);
+    
+        seatMapImage.setAttribute('src', eventData.seatmap.staticUrl);
+    
+    seatMap.append(seatMapImage);
 
-    // if we get a URL from youtube shows a video using the index 0
-//     if (event.externalLinks && event.externalLinks.youtube && event.externalLinks.youtube.length > 0) {
-//         const youtubeUrl = event.externalLinks.youtube[0].url;
-//         const videoElement = document.createElement('iframe');
-//         videoElement.src = youtubeUrl;
-//         videoElement.width = '100%';
-//         videoElement.height = '200px';
-//         videoElement.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-//         videoElement.allowFullscreen = true;
-
-//         eventVideo.innerHTML = ''; // clear the previus content
-//         eventVideo.appendChild(videoElement);
-//     } else {
-//         eventVideo.textContent = 'No video available';
-//     }
-// }
 
 //Get weather data for the event-----------------------------------------------------------------------------------------------------------
 // const eventZip = `${eventData._embedded.venues[0].postalCode} US`;
