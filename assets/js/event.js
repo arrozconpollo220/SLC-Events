@@ -40,7 +40,8 @@ console.log(eventData);  //Remove this line after Ricardo is complete with the p
 // }
 
 //Get weather data for the event-----------------------------------------------------------------------------------------------------------
-const eventZip = `${eventData._embedded.venues[0].postalCode} US`;
+// const eventZip = `${eventData._embedded.venues[0].postalCode} US`;
+const eventZip = "salt lake city";
 var weatherData;
 //API call to tomorrow.io
 fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${eventZip}&apikey=9UR5HLWZ6gE10koL7Qpj4zjCsx4NRnCK`)
@@ -63,10 +64,9 @@ function compareDates(data) {
     renderWeather(forecastArray, index)
 }
 function renderWeather(forecastArray, index) {
-    var weatherEl = document.getElementById('weather-container');  //need this created in HTML  <----------------------------------------
+    var weatherEl = document.getElementById('weather-container');
     //if the event selected is more than 5 days in the future, the forecast for the event
     //is not available.  Therefore, the current weather conditions are shown instead.
-    console.log(index);
     if (index === -1) {
         const futureAlert = document.createElement('p');
         futureAlert.textContent = "Forecast unavailable. Current conditions shown.";
@@ -128,3 +128,19 @@ function renderWeather(forecastArray, index) {
     weatherEl.append(weatherContainer);
 }
 //end weather API call code----------------------------------------------------------------------------------------------------------------
+
+//Get information for map------------------------------------------------------------------------------------------------------------------
+const mapEl = document.getElementById('mapInfo')
+const eventAddress = eventData._embedded.venues[0].address.line1;
+const userlocation = navigator.geolocation.getCurrentPosition(success);
+var userLat;
+var userLon;
+
+function success(position) {
+    userLat = position.latitude;
+    userLon = position.longitude;
+}
+
+const mapLink = `https://www.google.com/maps/embed/v1/directions?origin=${userLat},${userLon}&destination=${eventAddress},+Salt+Lake+City,+UT,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`;
+mapEl.setAttribute('src', mapLink);
+//end information for map------------------------------------------------------------------------------------------------------------------
