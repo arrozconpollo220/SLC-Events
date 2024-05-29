@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,12 @@
             width: 300px;
             margin: auto;
         }
+
         .event-image {
             width: 100%;
             height: auto;
         }
+
         .event-video {
             width: 100%;
             height: 200px;
@@ -29,19 +32,50 @@
         }
     </style>
 </head>
+
 <body>
+    <header class="header">
+        <h1 class="title">SLC EVENTS</h1>
+        <h3 class="sub-title">A Better Place To Find Your SLC Events</h3>
+        <a href="./index.html">
+            <button id="back-btn">
+                <b>Main Page</b>
+            </button>
+        </a>
+        </div>
+    </header>
 
-<div class="event-container">
-    <img id="event-image" class="event-image" alt="Event Image">
-    <p id="event-description"></p>
-    <div id="event-video" class="event-video"></div>
-</div>
 
-<weather id="weather"></weather>
+    <div class="venue-container" id="venue-container">
+        <P>Venue</P>
+    </div>
+    <div class="image-container" id="image-container">
+        <img id="event-image"></img>
+    </div>
+    <div class="des-container">
+        <p>Event Description</p>
+        <button id="buyButton">Buy Tickets bro!</button>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-<script>dayjs().format()</script>
-<script src="./assets/js/event.js"></script>
+    <div class="weather-container" id="weather-container">
+        <p>Weather for the day of the event</p>     
+    </div>
 
+    <div class="seat-map-container" id="seat-map-container">
+        <p>Seat Map</p>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+    <script src="./assets/js/event.js"></script>
+    <footer>
+
+        <div class="traffic-container" id="traffic-container">
+            <p>Traffic for the Event</p>
+        </div>
+
+        <h5>An MMDR Website</h5>
+    </footer>
 </body>
+
 </html>

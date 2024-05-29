@@ -30,8 +30,7 @@ video {
 }
 
 .js-modal-trigger {
-
-    color: white;
+  color: white;
   text-align: center;
   background-image:linear-gradient( #FCB105, #550499);
   font-size: 20px;
@@ -39,7 +38,6 @@ video {
   font-weight: bold;
   text-shadow: 5px 5px 10px black;
   border-radius: 10px;
-  
   padding: 8px;
 }
 
