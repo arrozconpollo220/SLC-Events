@@ -14,8 +14,13 @@ console.log(eventData);  //Remove this line after Ricardo is complete with the p
 
 
     const venueAddress = document.createElement('p');
+    const venueAddress2 = document.createElement('p');
     venueAddress.textContent = eventData._embedded.venues[0].address.line1;
+    venueAddress2.textContent = `${eventData._embedded.venues[0].city.name}, UT ${eventData._embedded.venues[0].postalCode}`;
     venue.append(venueAddress);
+    venue.append(venueAddress2);
+    
+    
     
 
     buyButton.setAttribute('onclick',`window.location="${eventData.url}"`);
