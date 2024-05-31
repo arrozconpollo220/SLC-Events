@@ -22,7 +22,7 @@ console.log(eventData);  //event object saved in local storage
     venue.append(venueAddress);
     venue.append(venueAddress2);
 
-    buyButton.setAttribute('onclick',`window.location="${eventData.url}"`);
+    buyButton.setAttribute('onclick',`window.open('${eventData.url}');`);
     
     const seatMapImage = document.createElement('img');
     if (typeof eventData.seatmap !== "undefined") {

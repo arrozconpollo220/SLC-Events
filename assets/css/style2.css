@@ -83,3 +83,29 @@ footer {
     width: 600px;
 }
 
+@media screen and (max-width: 990px) {
+    #event-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #venueInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .venueInfoDetail {
+        margin-top: 30px;
+        width: 85%;
+    }
+    #event-desc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .event-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+}
