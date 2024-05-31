@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>SLC EVENTS</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="title">SLC EVENTS</h1>
+        <h3 class="sub-title">A Better Place To Find Your SLC Event</h3>
+        <img src="assets/images/SLCnight crop.jpg" alt="">
+    </header>
+
+
+
+    <section class="main is-align-content-flex-start">
+        <div class="main">
+            <video id="bgVideo" autoplay loop muted>
+                <source src="assets/selfie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                <source src="../images/Home_Page.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </section>
+    <container id="pageOneContent">
+        <div class="welcome pageOneCol">
+            <h3>Welcome to our webpage</h3>
+            <button class="js-modal-trigger" data-target="modal-js-example">
+                Search for Events
+            </button>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur quaerat, odio voluptatem
+                voluptatibus fugiat ratione animi voluptates nam dolores eum culpa officiis porro debitis similique
+                voluptate. Expedita, harum deserunt!</p>
+        </div>
+
+        <section class="event-list is-pulled-right pageOneCol" id="event-list">
+        </section>
+    </container>
+
+    <footer>
+        <h5>An MMDR Website</h5>
+    </footer>
+
+    <div id="modal-js-example" class="modal">
+        <div class="modal-background"></div>
+
+        <div class="modal-content">
+            <div class="box">
+                Search for Events
+                <div class="section modal-wrap">
+                    <div class="field has-addons">
+                        <div class="control is-expanded column">
+                            <input class="mb-2 input is-rounded" id="start-date" type="date" />
+                            <input class="mb-2 input is-rounded" id="end-date" type="date" />
+                            <div class="mb-2 select is-fullwidth is-rounded">
+                                <select name="Event" id="eventTypeSelector">
+                                    <option value="All Events">All Events</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Shows">Shows</option>
+                                    <option value="Arts & Theatre">Arts & Theatre</option>
+                                </select>
+                            </div>
+                            <div class="control is-flex is-justify-content-flex-end">
+                                <button type="click" id="search-btn" class="button is-rounded is-dark">Show
+                                    Events</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+        <script src="scripts/html5ext.js" type="text/javascript"></script>
+        <script>dayjs().format()</script>
+        <script src="./assets/js/script.js"></script>
+    </div>
+</body>

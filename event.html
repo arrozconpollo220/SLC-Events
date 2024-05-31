@@ -62,27 +62,30 @@
         <form><button type="submit" class="button is-warning" id="buyButton">Buy Tickets bro!</button></form>
     </div>
 
-    <div class="weather-container" id="weather-container">
-        <h1>Weather for the day of the event</h1>     
-    </div>
-
-    <div class="seat-map-container" id="seat-map-container">
-        <h1>Seat Map</h1>
-    </div>
-    <div class="traffic-container" id="traffic-container">
-        <h1>Traffic for the Event</h1>
-        <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:500px;">
-            <div id="google-maps-display" style="height:100%; width:100%;max-width:100%;">
-                <iframe id="mapInfo" style="height:100%;width:100%;border:0;" frameborder="0">
-                </iframe>
-            </div>
-            <a class="google-maps-html" href="https://kbj9qpmy.com/bp" id="grab-map-info">Internet Provider</a>
-            <style>#google-maps-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+    <container id="venueInfo">
+        <div class="venueInfoDetail">
+            <h1>Weather for the day of the event</h1> 
+            <container id="weather-container">
+            </container>    
         </div>
-    </div>
+
+        <div class="venueInfoDetail" id="seat-map-container">
+            <h1>Seat Map</h1>
+        </div>
+        <div class="venueInfoDetail" id="traffic-container">
+            <h1>Traffic for the Event</h1>
+            <div style="max-width:90%;list-style:none; transition: none;overflow:hidden;width:90%;height:90%;">
+                <div id="google-maps-display" style="height:100%; width:100%;max-width:100%;">
+                    <iframe id="mapInfo" style="height:100%;width:100%;border:0;" frameborder="0">
+                    </iframe>
+                </div>
+                <a class="google-maps-html" href="https://kbj9qpmy.com/bp" id="grab-map-info">Internet Provider</a>
+                <style>#google-maps-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+            </div>
+        </div>
+    </container>
 
     <footer>
-
         <h5>An MMDR Website</h5>
     </footer>
 

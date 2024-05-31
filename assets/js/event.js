@@ -1,7 +1,6 @@
 //get event data from local storage
 var eventData = JSON.parse(localStorage.getItem('SLCeventData'));
-console.log(eventData);  //Remove this line after Ricardo is complete with the page rendering <-----------------------------------------------------
-
+console.log(eventData);  //event object saved in local storage
 
     const eventTitle = document.getElementById('event-title');
     const eventImage = document.getElementById('event-image'); //I created a variable to store information
@@ -24,20 +23,18 @@ console.log(eventData);  //Remove this line after Ricardo is complete with the p
     venue.append(venueAddress2);
 
     buyButton.setAttribute('onclick',`window.location="${eventData.url}"`);
-    console.log(eventData.url);
     
     const seatMapImage = document.createElement('img');
-    seatMapImage.setAttribute('src', eventData.seatmap.staticUrl);
+    if (typeof eventData.seatmap !== "undefined") {
+        seatMapImage.setAttribute('src', eventData.seatmap.staticUrl);
+    } else {seatMapImage.setAttribute('src', "./assets/images/noSeatMap.png");}
     seatMap.append(seatMapImage);
 //This code is for adding various pieces of information found scattered throughout the API------------------------------------------------
     const addlInfo = document.getElementById("info-container");
 
     function populateAddlInfo (data) {
-        const lineBreak = document.createElement('p');
         const newInfo = document.createElement('p');
-        lineBreak.textContent = " ";
         newInfo.textContent = data;
-        addlInfo.append(lineBreak);
         addlInfo.append(newInfo);
     }
     if (typeof (eventData.ticketLimit) !== "undefined") {
@@ -49,14 +46,12 @@ console.log(eventData);  //Remove this line after Ricardo is complete with the p
     }
 //End code for adding additional information-----------------------------------------------------------------------------------------------
 
-
-
 //Get weather data for the event-----------------------------------------------------------------------------------------------------------
-// const eventZip = `${eventData._embedded.venues[0].postalCode} US`;
-const eventZip = "salt lake city";
+const eventLat = eventData._embedded.venues[0].location.latitude;
+const eventLon = eventData._embedded.venues[0].location.longitude;
 var weatherData;
 //API call to tomorrow.io
-fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${eventZip}&apikey=9UR5HLWZ6gE10koL7Qpj4zjCsx4NRnCK`)
+fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${eventLat},${eventLon}&apikey=9UR5HLWZ6gE10koL7Qpj4zjCsx4NRnCK`)
     .then(function (response) {
         return response.json();
     })
@@ -129,8 +124,8 @@ function renderWeather(forecastArray, index) {
     weatherIcon.setAttribute('src', iconData);
     weatherTemp.textContent = `${temperatureData}° F`;
     weatherCond.textContent = eventWeatherData;
-    weatherWind.textContent = `${windSpeedData} MPH`;
-    weatherHum.textContent = `${humidityData}%`;
+    weatherWind.textContent = `Wind: ${windSpeedData} MPH`;
+    weatherHum.textContent = `Humidity: ${humidityData}%`;
     //render to page
     weatherContainer.append(weatherIcon);
     weatherContainer.append(weatherTemp);
