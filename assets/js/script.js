@@ -41,9 +41,7 @@ function renderEventList() {
   for (i = 0; i < eventsArray.length; i++) {
     //set variables for the data
     const eventID = eventsArray[i].id;
-    const eventDate = dayjs(eventsArray[i].dates.start.localDate).format(
-      "MM/DD/YYYY"
-    );
+    const eventDate = dayjs(eventsArray[i].dates.start.localDate + ' ' + eventsArray[i].dates.start.localTime).format("MM/DD/YYYY @ h:mm A");
     const eventTime = eventsArray[i].dates.start.localTime;
     const eventLoc = eventsArray[i]._embedded.venues[0].name;
     //dynamically create elements
@@ -52,7 +50,7 @@ function renderEventList() {
     const eventDetails = document.createElement("p");
     //set text content of the elements
     eventTitle.textContent = eventsArray[i].name;
-    eventDetails.textContent = `${eventDate} @ ${eventTime}, ${eventLoc}`;
+    eventDetails.textContent = `${eventDate}, ${eventLoc}`;
     //render each event item to the page
     nextEventContainer.append(eventTitle);
     nextEventContainer.append(eventDetails);

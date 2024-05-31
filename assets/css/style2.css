@@ -21,9 +21,26 @@ font-weight: bold;
 }
 
 #event-title {
-    font-size: 48px; 
     color: orange;
     font-weight: bold;
+    border-bottom: solid orange 1px;
+}
+
+#event-title h1 {
+    font-size: 48px; 
+}
+
+#event-title p {
+    font-size: 28px;
+}
+
+#venue-container {
+    margin-top: 5px;
+}
+
+#venue-container h3 {
+    font-weight: bold;
+    font-size: 24px;
 }
 
 #venueInfo {
@@ -44,6 +61,10 @@ font-weight: bold;
     padding: 20px;
 }
 
+.venueInfoDetail h1 {
+    margin-bottom: 10px;
+}
+
 #weather-container {
     display: flex;
     flex-direction: column;
@@ -52,8 +73,18 @@ font-weight: bold;
     align-items: center;
 }
 
+#weather-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #seat-map-container img {
     width: 90%;
+}
+
+#info-container {
+    margin-top: 30px;
 }
 
 #info-container p {
@@ -93,6 +124,8 @@ footer {
 
 .image-container img {
     width: 600px;
+    border-radius: 20px;
+    border: solid orange 2px;
 }
 
 @media screen and (max-width: 990px) {

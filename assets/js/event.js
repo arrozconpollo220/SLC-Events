@@ -9,16 +9,22 @@ console.log(eventData);  //event object saved in local storage
     const buyButton = document.getElementById('buyButton');
     const venue = document.getElementById('venue-container');
     
-    const eventTitleInfo = document.createElement("p");
+    const eventTitleInfo = document.createElement("h1");
+    const eventDateTime = document.createElement("p");
     eventTitleInfo.textContent = eventData.name;
+    eventDateTime.textContent = `${dayjs(eventData.dates.start.localDate + ' ' + eventData.dates.start.localTime).format('dddd, MMMM D, YYYY @ h:mm A')}`
     eventTitle.append(eventTitleInfo);
+    eventTitle.append(eventDateTime);
 
     eventImage.setAttribute('src',eventData.images[2].url);
 
+    const venueName = document.createElement('h3');
     const venueAddress = document.createElement('p');
     const venueAddress2 = document.createElement('p');
+    venueName.textContent = eventData._embedded.venues[0].name;
     venueAddress.textContent = eventData._embedded.venues[0].address.line1;
     venueAddress2.textContent = `${eventData._embedded.venues[0].city.name}, UT ${eventData._embedded.venues[0].postalCode}`;
+    venue.append(venueName);
     venue.append(venueAddress);
     venue.append(venueAddress2);
 
