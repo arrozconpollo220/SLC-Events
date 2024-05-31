@@ -24,8 +24,7 @@ video {
     color: aliceblue;
     text-align: center;
     justify-content: center;
-   
-    background-image:linear-gradient(#FCB105,#550499);
+    background-image:linear-gradient(#FCB105,#550499, black, black);
 
 }
 
@@ -44,7 +43,7 @@ video {
 .modal-wrap {
     background: #2e333d;
     position: center;
-    width: 603px;
+    width: 603px;   
     top: 53%;
 }
 
@@ -73,6 +72,7 @@ video {
     top: 10%;
 }
 
+
 /* end of modal  */
 
 .eventListItem {
@@ -86,7 +86,7 @@ video {
 
 .eventListItem:hover {
     
-    color: #96FE00;
+    color: lightgray;
     box-shadow: 10px 10px 5px #96FE00;
 }
 
@@ -105,14 +105,21 @@ video {
 #pageOneContent {
     display: flex;
     justify-content: space-around;
-    }
+    color: aliceblue;
+    align-items: start;
+}
 
 .pageOneCol {
-    background: white;
+    background: #131B34;
     width: 40%;
     height: 50vh;
     padding: 10px;
     overflow-y:auto;
     border-radius: 20px;
+    background-color: rgba(19, 27, 52, 0.8);
 }
 
+.skyline {
+    min-width: 100vw; 
+    max-height: 300px;
+}
