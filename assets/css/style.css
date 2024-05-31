@@ -25,7 +25,11 @@ video {
     text-align: center;
     justify-content: center;
     background-image:linear-gradient(#FCB105,#550499, black, black);
+    padding-top: 15px;
+}
 
+.header h3 {
+    padding-bottom: 15px;
 }
 
 .js-modal-trigger {
@@ -49,9 +53,7 @@ video {
 
 
 .main {
-    padding: 50px;
-    width: 30%;
-    column-width: 40%;
+    padding: 10px;
 }
 
 .title {
@@ -123,3 +125,43 @@ video {
     min-width: 100vw; 
     max-height: 300px;
 }
+
+#welcome {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-around
+}
+
+#welcome p {
+font-size: 24px;
+margin-top: 30px;
+}
+
+#welcome button {
+    margin-top: 30px;
+}
+
+#welcome h3 {
+    font-size: 48px;
+}
+
+footer {
+    margin: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 990px) {
+    #pageOneContent {
+      flex-direction: column;
+      align-items: center;
+    }
+    .pageOneCol {
+        width: 80%;
+        margin-top: 30px;
+        min-width: 380px;
+    }
+}
+
