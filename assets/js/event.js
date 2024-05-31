@@ -13,7 +13,7 @@ console.log(eventData);  //event object saved in local storage
     eventTitleInfo.textContent = eventData.name;
     eventTitle.append(eventTitleInfo);
 
-    eventImage.setAttribute('src',eventData.images[0].url);
+    eventImage.setAttribute('src',eventData.images[2].url);
 
     const venueAddress = document.createElement('p');
     const venueAddress2 = document.createElement('p');

@@ -49,3 +49,37 @@ font-weight: bold;
 #info-container p {
     margin-top: 15px;
 }
+
+#event-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+#event-desc {
+    flex-basis: 50%;
+}
+
+button {
+    width: 250px;
+    margin-top: 30px;
+}
+
+footer {
+    margin: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    align-items: start;
+    margin-top: 30px;
+}
+
+.image-container img {
+    width: 600px;
+}
+

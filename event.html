@@ -38,35 +38,44 @@
     <header class="header">
         <h1 class="title">SLC EVENTS</h1>
         <h3 class="sub-title">A Better Place To Find Your SLC Events</h3>
-        <a href="./index.html">
-            <button class="button is-warning" id="back-btn">
-                <b>Main Page</b>
-            </button>
-        </a>
+        
         </div>
     </header>
 
-    <div id="event-title">
-    </div>
+    <container id="event-info">
+        <container id="event-desc">
+            <div id="event-title">
+            </div>
 
-    <div class="venue-container" id="venue-container">
-        <h1>Venue</h1>
-    </div>
+            <div class="venue-container" id="venue-container">
+                <h1>Venue</h1>
+            </div>
 
-    <div class="image-container" id="image-container">
-        <img id="event-image"></img>
-    </div>
+            <div class="info-container" id="info-container">
+                <h1>Additional Information</h1>
+            </div>
 
-    <div class="info-container" id="info-container">
-        <h1>Additional Information</h1>
-        <form><button type="submit" class="button is-warning" id="buyButton">Buy Tickets bro!</button></form>
-    </div>
+            <div>
+                <form><button type="submit" class="button js-modal-trigger" id="buyButton">Buy Tickets bro!</button></form>
+                <a href="./index.html">
+                    <button class="button js-modal-trigger" id="back-btn">
+                        <b>Main Page</b>
+                    </button>
+                </a>
+            </div>
+        </container>
+
+        <div class="image-container" id="image-container">
+            <img id="event-image"></img>
+        </div>
+
+    </container>
 
     <container id="venueInfo">
         <div class="venueInfoDetail">
-            <h1>Weather for the day of the event</h1> 
+            <h1>Weather for the day of the event</h1>
             <container id="weather-container">
-            </container>    
+            </container>
         </div>
 
         <div class="venueInfoDetail" id="seat-map-container">
@@ -80,7 +89,16 @@
                     </iframe>
                 </div>
                 <a class="google-maps-html" href="https://kbj9qpmy.com/bp" id="grab-map-info">Internet Provider</a>
-                <style>#google-maps-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+                <style>
+                    #google-maps-display img.text-marker {
+                        max-width: none !important;
+                        background: none !important;
+                    }
+
+                    img {
+                        max-width: none
+                    }
+                </style>
             </div>
         </div>
     </container>
