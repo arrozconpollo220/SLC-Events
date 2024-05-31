@@ -6,7 +6,6 @@ const eventListEl = document.getElementById("event-list");
 function getEventData(startDate, endDate, eventType) {
   const start = dayjs(startDate).format("YYYY-MM-DD");
   const end = dayjs(endDate).add(1, "day").format("YYYY-MM-DD"); //needs to be end date plus one day for Zulu time conversion
-  console.log(startDate,endDate,eventType);
   //convert received list type to API classification
   var eventClass = eventType;
   var APIClass;
@@ -21,7 +20,7 @@ function getEventData(startDate, endDate, eventType) {
   } else {
     APIClass = "";
   }
-  console.log(`https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20lake%20city&apikey=EFLPko3jjswvkWgJxXg6p9OyquHfVL5A&startDateTime=${start}T06:00:00Z&endDateTime=${end}T05:59:59Z&sort=date,asc${APIClass}`)
+  
   //fetches data from Ticketmaster and stores in "eventList" variable
   fetch(
     `https://app.ticketmaster.com/discovery/v2/events.json?&city=salt%20lake%20city&apikey=EFLPko3jjswvkWgJxXg6p9OyquHfVL5A&startDateTime=${start}T06:00:00Z&endDateTime=${end}T05:59:59Z&sort=date,asc${APIClass}`
