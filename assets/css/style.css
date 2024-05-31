@@ -163,5 +163,12 @@ footer {
         margin-top: 30px;
         min-width: 380px;
     }
+    .modal-wrap   {
+        width: 300px;
+    }
+    .box  {
+        width: 330px;
+    } 
+
 }
 
