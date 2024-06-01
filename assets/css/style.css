@@ -136,6 +136,7 @@ video {
 #welcome p {
 font-size: 24px;
 margin-top: 30px;
+text-align: center;
 }
 
 #welcome button {
@@ -144,6 +145,7 @@ margin-top: 30px;
 
 #welcome h3 {
     font-size: 48px;
+    text-align: center;
 }
 
 footer {
