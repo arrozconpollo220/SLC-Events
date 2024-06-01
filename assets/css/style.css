@@ -14,11 +14,9 @@ video {
     min-height: 100vh;
     z-index:-100;
     opacity: .50;
-
-  }
+}
 
 .header {
-
     font-size: 20px;
     text-shadow: 5px 5px 10px black;
     color: aliceblue;
@@ -49,6 +47,7 @@ video {
     position: center;
     width: 603px;   
     top: 53%;
+    color: white;
 }
 
 
@@ -172,3 +171,6 @@ footer {
 
 }
 
+.control p {
+    margin-left: 14px;
+}
